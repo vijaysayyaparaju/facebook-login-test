@@ -4,7 +4,8 @@ pipeline {
     stages {
         stage('Clone Code') {
             steps {
-                git 'https://github.com/your-username/facebook-login-test.git'
+                git 'https://github.com/vijaysayyaparaju/facebook-login-test.git'
+'
             }
         }
 
