@@ -4,7 +4,14 @@ pipeline {
     stages {
         stage('Clone Code') {
             steps {
-                git branch: 'main', url: 'https://github.com/vijaysayyaparaju/facebook-login-test.git'
+                git 'https://github.com/vijaysayyaparaju/facebook-login-test.git'
+            }
+        }
+
+        stage('Check Python and pip') {
+            steps {
+                bat 'python --version || echo Python not found'
+                bat 'pip --version || echo pip not found'
             }
         }
 
@@ -16,7 +23,7 @@ pipeline {
 
         stage('Run Test') {
             steps {
-                bat 'python tests/test_facebook_login.py'
+                bat 'python facebook_login_test.py'
             }
         }
     }
