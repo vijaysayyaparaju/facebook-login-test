@@ -5,7 +5,6 @@ pipeline {
         stage('Clone Code') {
             steps {
                 git 'https://github.com/vijaysayyaparaju/facebook-login-test.git'
-'
             }
         }
 
